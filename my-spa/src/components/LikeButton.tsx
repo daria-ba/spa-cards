@@ -18,15 +18,7 @@ const LikeButton = ({ id, liked }: { id: number; liked: boolean }) => {
       }}
       variant="danger"
       size="sm"
-      style={{
-        position: "absolute",
-        background: "white",
-        opacity: "0.5",
-        bottom: "10px",
-        right: "10px",
-        color: "red",
-        zIndex: 10,
-      }}
+      className="product-button-like"
     >
       {liked ? <BsHeartFill /> : <BsHeart />}
     </Button>

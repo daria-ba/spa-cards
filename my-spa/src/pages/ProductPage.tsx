@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Container from "react-bootstrap/Container";
 import { RootState } from "../store";
 import GoHomeButton from "../components/GoHomeButton";
 
-const CardComponent = () => {
+const ProductPage = () => {
   const { id } = useParams<{ id: string }>();
   const products = useSelector((state: RootState) => state.products.products);
 
@@ -14,52 +15,23 @@ const CardComponent = () => {
   }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
+    <Container className="product-page page-container">
       <GoHomeButton />
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          flexGrow: 1,
-          width: "100%",
-          textAlign: "center",
-        }}
-      >
+      <div className="product-page product-container">
         <img
           src={product.image_id}
           alt={product.title}
-          style={{
-            width: "400px",
-            height: "400px",
-            objectFit: "cover",
-            marginBottom: "10px",
-          }}
+          className="product-page image"
         />
 
-        <div
-          style={{
-            width: "400px",
-            whiteSpace: "wrap",
-            overflow: "auto",
-          }}
-        >
+        <div className="product-page description">
           <h2>{`Название: "${product.title}"`}</h2>
           <h3>{`Автор: ${product.artist_display}`}</h3>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
-export default CardComponent;
+export default ProductPage;

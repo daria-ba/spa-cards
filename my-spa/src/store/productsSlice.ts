@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { productsApi } from "../api/productsApi";
 
-interface Product {
+export interface Product {
   id: number;
   title: string;
   artist_display: string;
@@ -42,14 +42,6 @@ const productSlice = createSlice({
         state.filteredProducts = state.filteredProducts.filter(
           (product) => product.id !== Number(action.payload),
         );
-      }
-    },
-    editProduct: (state, action: PayloadAction<Product>) => {
-      const index = state.products.findIndex(
-        (p: { id: number }) => p.id === action.payload.id,
-      );
-      if (index !== -1) {
-        state.products[index] = action.payload;
       }
     },
     toggleLike: (state, action: PayloadAction<number>) => {
@@ -93,11 +85,6 @@ const productSlice = createSlice({
   },
 });
 
-export const {
-  addProduct,
-  removeProduct,
-  editProduct,
-  toggleLike,
-  toggleFilter,
-} = productSlice.actions;
+export const { addProduct, removeProduct, toggleLike, toggleFilter } =
+  productSlice.actions;
 export default productSlice.reducer;
