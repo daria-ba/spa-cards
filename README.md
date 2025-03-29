@@ -11,7 +11,7 @@
 
 ## 🚀 Демо  
 Проект доступен по ссылке:  
-🔗 [GitHub Pages](<[https://daria-ba.github.io/spa-cards]>)  
+🔗 [GitHub Pages](<https://daria-ba.github.io/spa-cards>)  
 
 ## 📥 Установка и запуск  
 
