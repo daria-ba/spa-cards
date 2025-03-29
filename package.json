@@ -6,8 +6,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
