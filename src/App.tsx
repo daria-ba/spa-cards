@@ -1,17 +1,19 @@
 import "./styles/App.css";
-import { BrowserRouter, useRoutes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store/index.ts";
 import { routes } from "./routes.tsx";
 
-const AppRoutes = () => useRoutes(routes);
-
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
+      <HashRouter>
+        <Routes>
+          {routes.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </HashRouter>
     </Provider>
   );
 }
