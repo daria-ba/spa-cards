@@ -2,13 +2,13 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { AppDispatch } from "../store/index";
 import Button from "react-bootstrap/esm/Button";
-import GoHomeButton from "../components/GoHomeButton";
 import { addProduct } from "../store/productsSlice";
 import Product from "../api/productsApi";
+import { AppDispatch } from "../store/index";
+import GoHomeButton from "../components/GoHomeButton";
 
-const CreateForm = () => {
+const CreateProductForm = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
@@ -77,7 +77,7 @@ const CreateForm = () => {
                 />
               </div>
 
-              <Button type="submit" disabled={isSubmitting} className="">
+              <Button type="submit" disabled={isSubmitting}>
                 Добавить товар
               </Button>
             </Form>
@@ -88,4 +88,4 @@ const CreateForm = () => {
   );
 };
 
-export default CreateForm;
+export default CreateProductForm;

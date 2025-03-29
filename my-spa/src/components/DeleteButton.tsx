@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
+import { BsXLg } from "react-icons/bs";
 import Button from "react-bootstrap/Button";
 import { removeProduct } from "../store/productsSlice";
-import { BsXLg } from "react-icons/bs";
 
 const DeleteButton = ({ id }: { id: number }) => {
   const dispatch = useDispatch();
@@ -22,15 +22,7 @@ const DeleteButton = ({ id }: { id: number }) => {
         handleRemove(id);
       }}
       size="sm"
-      style={{
-        position: "absolute",
-        background: "white",
-        fontSize: "15px",
-        color: "black",
-        top: "10px",
-        right: "10px",
-        zIndex: 5,
-      }}
+      className="product-button-delete"
     >
       <BsXLg />
     </Button>
